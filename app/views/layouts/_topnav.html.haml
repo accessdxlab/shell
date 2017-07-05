@@ -1,0 +1,53 @@
+%nav.navbar.navbar-default.navbar-static-top.m-b-0
+  .navbar-header
+    .top-left-part
+      %a.logo{:href => "index.html"}
+        %b
+          = image_tag 'admin-logo-dark.png', class: 'light-logo'
+        %span.hidden-xs
+          = image_tag 'admin-text-dark.png', class: 'light-logo'
+    %ul.nav.navbar-top-links.navbar-left
+      %li
+        %a.open-close.waves-effect.waves-light{:href => "javascript:void(0)"}
+          %i.fa.fa-bars
+
+    %ul.nav.navbar-top-links.navbar-right.pull-right
+      %li
+        %form.app-search.hidden-sm.hidden-xs.m-r-10{:role => "search"}
+          %input.form-control{:placeholder => "Search...", :type => "text"}/
+          %a{:href => ""}
+            %i.fa.fa-search
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          %b.hidden-xs Steave
+          %span.caret
+        %ul.dropdown-menu.dropdown-user.animated.flipInY
+          %li
+            .dw-user-box
+              .u-text
+                %h4 Steave Jobs
+                %p.text-muted varun@gmail.com
+                %a.btn.btn-rounded.btn-danger.btn-sm{:href => "profile.html"} View Profile
+          %li.divider{:role => "separator"}
+          %li
+            %a{:href => "#"}
+              -#%i.fa.fa-user
+              My Profile
+          %li
+            %a{:href => "#"}
+              -#%i.fa.fa-wallet
+              My Balance
+          %li
+            %a{:href => "#"}
+              -#%i.fa.fa-email
+              Inbox
+          %li.divider{:role => "separator"}
+          %li
+            %a{:href => "#"}
+              -#%i.fa.fa-settings
+              Account Setting
+          %li.divider{:role => "separator"}
+          %li
+            %a{:href => "#"}
+              -#%i.fa.fa-power-off
+              Logout

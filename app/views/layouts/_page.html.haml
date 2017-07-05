@@ -1,0 +1,87 @@
+#page-wrapper
+  .container-fluid
+    .row.bg-title
+      .col-lg-3.col-md-4.col-sm-4.col-xs-12
+        %h4.page-title Dashboard 1
+      .col-lg-9.col-sm-8.col-md-8.col-xs-12
+        %ol.breadcrumb
+          %li
+            %a{:href => "#"} Dashboard
+          %li.active Dashboard 1
+      / /.col-lg-12
+    / /.row
+    / ==============================================================
+    / Different data widgets
+    / ==============================================================
+    / row
+    / /.row
+    .row
+      .col-md-12.col-lg-8.col-sm-12.col-xs-12
+        .white-box
+          %h3.box-title Products Yearly Sales
+          %ul.list-inline.text-right
+            %li
+              %h5
+                %i.fa.fa-circle.m-r-5.text-info>
+                Mac
+            %li
+              %h5
+                %i.fa.fa-circle.m-r-5.text-danger>
+                Windows
+          #ct-visits{:style => "height: 285px;"}
+      .col-md-12.col-lg-4.col-sm-12.col-xs-12
+        .bg-theme-alt
+          #ct-daily-sales.p-t-30{:style => "height: 300px"}
+        .white-box
+          .row
+            .col-xs-8
+              %h2.m-b-0.font-medium Week Sales
+              %h5.text-muted.m-t-0 Ios app - 160 sales
+            .col-xs-4
+              .circle.circle-md.bg-info.pull-right.m-t-10
+                %i.ti-shopping-cart
+    / ==============================================================
+    / Blog-component
+    / ==============================================================
+    .row
+      .col-md-4.col-lg-4.col-xs-12.col-sm-12
+        %img.img-responsive{:alt => "user", :src => "../plugins/images/big/img2.jpg"}/
+        .white-box
+          .text-muted
+            %span.m-r-10
+              %i.icon-calender
+              May 16
+            %a.text-muted.m-l-10{:href => "#"}
+              %i.fa.fa-heart-o
+              38
+          %h3.m-t-20.m-b-20 Top 20 Models are on the ramp
+          %p Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.
+          %button.btn.btn-success.btn-rounded.waves-effect.waves-light.m-t-20 Read more
+      .col-md-4.col-lg-4.col-xs-12.col-sm-12
+        %img.img-responsive{:alt => "user", :src => "../plugins/images/big/img3.jpg"}/
+        .white-box
+          .text-muted
+            %span.m-r-10
+              %i.icon-calender
+              May 16
+            %a.text-muted.m-l-10{:href => "#"}
+              %i.fa.fa-heart-o
+              38
+          %h3.m-t-20.m-b-20 Top 20 Models are on the ramp
+          %p Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.
+          %button.btn.btn-success.btn-rounded.waves-effect.waves-light.m-t-20 Read more
+      .col-md-4.col-lg-4.col-xs-12.col-sm-12
+        %img.img-responsive{:alt => "user", :src => "../plugins/images/big/img4.jpg"}/
+        .white-box
+          .text-muted
+            %span.m-r-10
+              %i.icon-calender
+              May 16
+            %a.text-muted.m-l-10{:href => "#"}
+              %i.fa.fa-heart-o
+              38
+          %h3.m-t-20.m-b-20 Top 20 Models are on the ramp
+          %p Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.
+          %button.btn.btn-success.btn-rounded.waves-effect.waves-light.m-t-20 Read more
+  / /.container-fluid
+  %footer.footer.text-center 2017 © Ample Admin brought to you by themedesigner.in
