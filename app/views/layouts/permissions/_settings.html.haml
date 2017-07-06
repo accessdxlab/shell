@@ -1,0 +1,2 @@
+- css_class = params[:access] == 'profile' ? 'waves-effect active' : 'waves-effect'
+%li= link_to "Account Settings", user_path(id: current_user.id, access: 'profile'), class: css_class

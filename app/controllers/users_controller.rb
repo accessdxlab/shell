@@ -1,15 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  add_breadcrumb 'users', :users_path
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+    add_breadcrumb 'all users', users_path
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    add_breadcrumb 'account settings', user_path(id: current_user.id)
   end
 
   # GET /users/new

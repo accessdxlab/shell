@@ -1,7 +1,7 @@
 %nav.navbar.navbar-default.navbar-static-top.m-b-0
   .navbar-header
     .top-left-part
-      %a.logo{:href => "index.html"}
+      %a.logo{:href => root_url}
         %b
           = image_tag 'admin-logo-dark.png', class: 'light-logo'
         %span.hidden-xs
@@ -19,28 +19,16 @@
             %i.fa.fa-search
       %li.dropdown
         %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-          %b.hidden-xs Steave
+          %b.hidden-xs
+            = current_user.first_name
           %span.caret
         %ul.dropdown-menu.dropdown-user.animated.flipInY
           %li
             .dw-user-box
               .u-text
-                %h4 Steave Jobs
-                %p.text-muted varun@gmail.com
+                %h4
+                %p.text-muted= current_user.email
                 %a.btn.btn-rounded.btn-danger.btn-sm{:href => "profile.html"} View Profile
-          %li.divider{:role => "separator"}
-          %li
-            %a{:href => "#"}
-              -#%i.fa.fa-user
-              My Profile
-          %li
-            %a{:href => "#"}
-              -#%i.fa.fa-wallet
-              My Balance
-          %li
-            %a{:href => "#"}
-              -#%i.fa.fa-email
-              Inbox
           %li.divider{:role => "separator"}
           %li
             %a{:href => "#"}

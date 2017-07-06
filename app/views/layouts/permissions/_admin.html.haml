@@ -1,0 +1,15 @@
+- if ['users', 'roles'].include? params[:controller]
+  - css_class = 'waves-effect active'
+- else
+  - css_class = 'waves-effect'
+
+
+%li{:class => css_class}
+  = link_to 'Admin Settings', root_path, class: css_class
+  %ul.nav.nav-second-level
+    %li
+      %a{:href => users_path,  :class => "#{'active' if params[:controller] == 'users'}"}
+        %span.hide-menu Users
+    %li
+      %a{:href => roles_path,  :class => "#{'active' if params[:controller] == 'roles'}"}
+        %span.hide-menu Roles

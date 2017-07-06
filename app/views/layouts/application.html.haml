@@ -3,12 +3,32 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Kentrikos
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
     = csrf_meta_tags
+- if current_user
   %body.fix-header
     = render partial: 'layouts/preloader'
     #wrapper
       = render partial: 'layouts/topnav'
       = render partial: 'layouts/sidebar'
-      = render partial: 'layouts/page'
+
+      #page-wrapper
+        .container-fluid
+          .row.bg-title
+            .col-lg-3.col-md-4.col-sm-4.col-xs-12
+              %h4.page-title Dashboard
+            .col-lg-9.col-sm-8.col-md-8.col-xs-12
+              %ol.breadcrumb
+                = render_breadcrumbs :separator => ' / '
+
+          .row
+            = yield
+
+          = render partial: 'layouts/permissions/debugger'
+
+        %footer.footer.text-center 2017 © Access DX Laboratories
+
+- else
+  = render partial: 'layouts/preloader'
+  = render template: 'devise/sessions/new'

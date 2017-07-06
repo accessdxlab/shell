@@ -7,6 +7,8 @@ gem 'simple_form'
 gem 'bootstrap'
 gem 'sass-rails', '>= 3.2'
 gem 'font-awesome-rails'
+gem 'devise'
+gem 'breadcrumbs_on_rails'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
@@ -26,7 +28,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -47,3 +49,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development do
+  gem 'web-console', :branch => '2-x-stable'
+end

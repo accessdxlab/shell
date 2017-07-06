@@ -1,19 +1,27 @@
-%h1 Listing users
+.col-sm-12
+  .white-box
+    %h3.box-title All Users
+    %p.text-muted
+    .table-responsive
+      %table.table.color-table.dark-table
+        %thead
+          %tr
+            %th #
+            %th Email
+            %th First Name
+            %th Last Name
+            %th Roles
+        %tbody
+          - @users.each do |user|
+            %tr
+              %td= user.id
+              %td
+                = link_to user.email, user_path(id: user.id)
+              %td= user.first_name
+              %td= user.last_name
+              %td
+                - user.roles.each do |role|
+                  %button.btn.btn-outline.btn-default.btn-xs
+                    = role.name
 
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
-
-  %tbody
-    - @users.each do |user|
-      %tr
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New User', new_user_path
+  = link_to 'New User', new_user_path, class: 'btn btn-info'

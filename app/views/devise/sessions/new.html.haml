@@ -1,0 +1,73 @@
+%section#wrapper.new-login-register
+  .lg-info-panel
+    .inner-panel
+      %a.p-20.di{:href => "javascript:void(0)"}
+        = image_tag 'admin-logo.png'
+        .lg-content
+          %h2 THE ULTIMATE MULTIPURPOSE ADMIN TEMPLATE OF 2017
+          %p.text-muted with this admin you can get 2000+ pages, 500+ ui component, 2000+ icons, different demos and many more...
+          %a.btn.btn-rounded.btn-danger.p-l-20.p-r-20{:href => "#"} Buy now
+
+  .new-login-box
+    .white-box
+      %h3.box-title.m-b-0 Sign In to Access DX Laboratory
+      %small Enter your details below
+      #loginform.form-horizontal.new-lg-form
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = render partial: 'layouts/error_messages', locals: { object: f.object }
+          .form-group.m-t-20
+            .col-xs-12
+              %label Email Address
+              = f.input_field :email, required: false, autofocus: true, class: 'form-control', placeholder: 'Username', required: true, :error => true
+          .form-group
+            .col-xs-12
+              %label Password
+              = f.input_field :password, required: false, class: 'form-control', placeholder: 'Password'
+              -#%input.form-control{:placeholder => "Password", :required => "", :type => "password"}/
+
+
+          .form-group
+            .col-md-12
+              -#%input#checkbox-signup{:type => "checkbox"}/
+              .checkbox.checkbox-info.pull-left.p-t-0
+                = f.check_box :remember_me, as: :boolean if devise_mapping.rememberable?
+                %label{:for => "checkbox-signup"} Remember me
+
+
+              %a#to-recover.text-dark.pull-right{:href => "javascript:void(0)"}
+                %i.fa.fa-lock.m-r-5
+                Forgot pwd?
+          .form-group.text-center.m-t-20
+            .col-xs-12
+              = f.button :submit, "Log in", class: 'btn-block btn-info btn-rounded'
+              -#%button.btn.btn-info.btn-lg.btn-block.btn-rounded.text-uppercase.waves-effect.waves-light{:type => "submit"} Log In
+          .form-group.m-b-0
+            .col-sm-12.text-center
+              %p
+                Don't have an account?
+                %a.text-primary.m-l-5{:href => "register.html"}
+                  %b Sign Up
+        %form#recoverform.form-horizontal{:action => "index.html"}
+          .form-group
+            .col-xs-12
+              %h3 Recover Password
+              %p.text-muted Enter your Email and instructions will be sent to you!
+          .form-group
+            .col-xs-12
+              %input.form-control{:placeholder => "Email", :required => "", :type => "text"}/
+          .form-group.text-center.m-t-20
+            .col-xs-12
+              %button.btn.btn-primary.btn-lg.btn-block.text-uppercase.waves-effect.waves-light{:type => "submit"} Reset
+        = render "devise/shared/links"
+
+:css
+  .btn-info, .btn-info.disabled {
+    background: #2cabe3;
+    border: 1px solid #2cabe3;
+  }
+
+  .btn-info.disabled.focus, .btn-info.disabled:focus, .btn-info.disabled:hover, .btn-info.focus, .btn-info:focus, .btn-info:hover {
+    background: #2cabe3;
+    opacity: .8;
+    border: 1px solid #2cabe3;
+  }

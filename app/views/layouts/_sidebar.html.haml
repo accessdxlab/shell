@@ -1,47 +1,22 @@
+/ Left navbar-header
 .navbar-default.sidebar{:role => "navigation"}
   .sidebar-nav.slimscrollsidebar
     .sidebar-head
       %h3
         %span.fa-fw.open-close
-          %i.ti-close.ti-menu
+          %i.ti-menu.hidden-xs
+          %i.ti-close.visible-xs
         %span.hide-menu Navigation
     %ul#side-menu.nav
-      %li.user-pro
-        %a.waves-effect{:href => "#"}
-          = image_tag 'users/varun.jpg', class: 'img-circle'
-          %span.hide-menu
-            Steve Gection
-            %span.fa.arrow
-        %ul.nav.nav-second-level.collapse{"aria-expanded" => "false", :style => "height: 0px;"}
-          %li
-            %a{:href => "javascript:void(0)"}
-              %i.ti-user
-              %span.hide-menu My Profile
-          %li
-            %a{:href => "javascript:void(0)"}
-              %i.ti-wallet
-              %span.hide-menu My Balance
-          %li
-            %a{:href => "javascript:void(0)"}
-              %i.ti-email
-              %span.hide-menu Inbox
-          %li
-            %a{:href => "javascript:void(0)"}
-              %i.ti-settings
-              %span.hide-menu Account Setting
-          %li
-            %a{:href => "javascript:void(0)"}
-              %i.fa.fa-power-off
-              %span.hide-menu Logout
-        %li
-          %a.waves-effect{:href => "index.html"}
-            %i.mdi.mdi-av-timer.fa-fw{"data-icon" => "v"}
-            %span.hide-menu
-              Dashboard
-              %span.fa.arrow
-              %span.label.label-rouded.label-inverse.pull-right 4
-          %ul.nav.nav-second-level
-            %li
-              %a{:href => "index.html"}
-                %i.fa-fw 1
-                %span.hide-menu Dashboard 1
+
+      -# DASHBOARD
+      %li
+        = link_to "Dashboard", root_path, class: "#{params[:controller] == 'pages' ? 'waves-effect active' : 'waves-effect'}"
+
+      - if current_user.role? :admin
+        = render partial: 'layouts/permissions/admin'
+
+      = render partial: 'layouts/permissions/settings'
+
+      - if current_user.role? :receiving
+        = render partial: 'layouts/permissions/receiving'

@@ -12,7 +12,7 @@
 //= require ./moment/moment
 //= require ./calendar/dist/fullcalendar.min
 //= require ./calendar/dist/cal-init
-//= require ./custom.min
+//= require ./custom.js
 //= require ./cbpFWTabs
 (function() {
     [].slice.call(document.querySelectorAll('.sttabs')).forEach(function(el) {

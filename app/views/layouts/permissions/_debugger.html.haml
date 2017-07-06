@@ -1,0 +1,13 @@
+%hr
+- if session
+  .row
+    .col-md-12
+      .alert.alert-success.alert-dismissable
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+        = current_user.inspect
+  - if params
+    .row
+      .col-md-12
+        .alert.alert-info.alert-dismissable
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+          = params.inspect

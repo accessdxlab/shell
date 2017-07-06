@@ -1,0 +1,17 @@
+.col-sm-12
+  .white-box
+    %h3.box-title Roles
+    %p.text-muted
+    .table-responsive
+      %table.table.color-table.dark-table
+        %thead
+          %tr
+            %th #
+            %th Name
+        %tbody
+        - @roles.each do |role|
+          %tr
+            %td= role.id
+            %td= role.name
+
+  = link_to 'New Role', new_role_path
