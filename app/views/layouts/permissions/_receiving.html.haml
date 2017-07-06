@@ -1,4 +1,4 @@
-- if ['receiving'].include? params[:controller]
+- if ['receiving', 'rejects'].include? params[:controller]
   - css_class = 'waves-effect active'
 - else
   - css_class = 'waves-effect'
@@ -8,8 +8,8 @@
   = link_to 'Receiving', root_path, class: css_class
   %ul.nav.nav-second-level
     %li
-      %a{:href => '#',  :class => "#{'active' if params[:controller] == 'receiving'}"}
-        %span.hide-menu Intake PGX
+      %a{:href => intake_path,  :class => "#{'active' if params[:controller] == 'receiving'}"}
+        %span.hide-menu Intake Sample
     %li
-      %a{:href => '#',  :class => "#{'active' if params[:controller] == 'rejects'}"}
+      %a{:href => rejects_path,  :class => "#{'active' if params[:controller] == 'rejects'}"}
         %span.hide-menu Rejects

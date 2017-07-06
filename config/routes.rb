@@ -1,4 +1,5 @@
 Kentrikos::Application.routes.draw do
+  get "rejects/index"
   resources :roles
 
   devise_for :users
@@ -9,6 +10,17 @@ Kentrikos::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#index'
+
+  # receiving
+  scope :receiving do
+    get '/intake' => 'receiving#intake', as: :intake
+    get '/intake_pgx' => 'receiving#intake_pgx', as: :intake_pgx
+    get '/intake_tox' => 'receiving#intake_tox', as: :intake_tox
+  end
+
+  scope :rejects do
+    get '/rejects' => 'rejects#index', as: :rejects
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
